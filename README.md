@@ -18,7 +18,7 @@ In this repository, we will find all the ressources to reproduce the project suc
 This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the LICENSE file for details.
 So the repository is completely open source, anyone can download the files and add some modifications to it.
 
-The text classification folder contains the code to retrieve the Pubmed abtracts from the medline format. 
+The text classification folder contains the code to retrieve the Pubmed abtracts from the MEDLINE format. 
 This code needs to be used before using the binary classifer from DEBBIE.
 The file "binary classifier from DEBBIE.py" is an adaptation of the SVM classifer from DEBBIE project where 2 classification models were compared (SGD and Random Forest) and where the performances of the models are evaluated.
 The file "multinomial classifier.py" contains the multi-class classifier that was implemented during this project. 
@@ -33,6 +33,8 @@ In this set, we will find clinical studies, in vivo studies, in vitro studies, n
 
 The 3d printing corpus contains the PMIDs of the entire 3d printing literature available up to November 2020 which represents 11,153 articles.
 These articles were found using the following Pubmed query:(((3d printing) OR (3d-printing) OR (three dimensional printing) OR (bioprinting)) NOT ((review)[Publication Type])) NOT ((systematic review)[Publication Type])
+NB: To retrieve the abstracts from the given PMIDs, you can use the Ebot tool from NCBI (link:https://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi).
+This tool works by taking a list of PMIDs or a Pubmed query to generate a perl code that you can run on your terminal in order to get the abstracts in MEDLINE format.
 
 
 
