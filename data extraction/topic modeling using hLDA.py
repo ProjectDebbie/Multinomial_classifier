@@ -1,3 +1,4 @@
+# Disclaimer: this code was adapted by Osnat Hakimi from the following code: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
 #!/usr/bin/env python
 # coding: utf-8
 
