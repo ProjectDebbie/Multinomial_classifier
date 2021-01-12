@@ -18,12 +18,18 @@ In this repository, we will find all the ressources to reproduce the project suc
 This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the LICENSE file for details.
 So the repository is completely open source, anyone can download the files and add some modifications to it.
 
-The file "multinomial classifier.py" contains the multi-class classifier that was implemented during this project.
-A total of 4 classification models were tested in this code: Multinomial Naive Bayes, Stochastic Gradient Descent, Random Forest and k-Nearest-Neighbors.
+The text classification folder contains the code to retrieve the Pubmed abtracts from the medline format. 
+This code needs to be used before using the binary classifer from DEBBIE.
+The file "binary classifier from DEBBIE.py" is an adaptation of the SVM classifer from DEBBIE project where 2 classification models were compared (SGD and Random Forest) and where the performances of the models are evaluated.
+The file "multinomial classifier.py" contains the multi-class classifier that was implemented during this project. 
+A file is also included in this folder to change the format of the data before the multinomial classification.
+In total 4 classification models were tested for the multinomial classification: Multinomial Naive Bayes, Stochastic Gradient Descent, Random Forest and k-Nearest-Neighbors.
 The best results were obtained with the SGD classification model. We managed to get 0.92 of accuracy and 0.89 of f1-score.
 
-The 3d printing testing set were created manually by looking at the 3d printing literature from Pubmed andcontains a list 477 PMIDs of articles about 3d printing.
-In this set, we will find clinical studies, in vivo studies, in vitro studies, non biomaterials studies and studies that contains both in vivo and in vitro experiments.
+The data extraction folder contains the codes to do text analysis.
+
+The 3d printing testing set were created manually by looking at the 3d printing literature from Pubmed and contains a list 477 PMIDs of articles about 3d printing.
+In this set, we will find clinical studies, in vivo studies, in vitro studies, non biomaterials studies and studies that contain both in vivo and in vitro experiments.
 
 The 3d printing corpus contains the PMIDs of the entire 3d printing literature available up to November 2020 which represents 11,153 articles.
 These articles were found using the following Pubmed query:(((3d printing) OR (3d-printing) OR (three dimensional printing) OR (bioprinting)) NOT ((review)[Publication Type])) NOT ((systematic review)[Publication Type])
