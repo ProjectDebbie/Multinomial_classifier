@@ -1,3 +1,5 @@
+# Disclaimer: this code comes from https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb 
+
 # Importing modules
 import pandas as pd
 import os
