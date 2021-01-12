@@ -15,7 +15,8 @@ The objectives of the project are the following:
     3) by using topic mining techniques such as LDA and hLDA
 
 In this repository, we will find all the ressources to reproduce the project such as the the datasets and the Python codes that were used for text classification and data extraction.
-This repository is completely open, anyone can download the files and add some modifications to it.
+This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the LICENSE file for details.
+So the repository is completely open source, anyone can download the files and add some modifications to it.
 
 The file "multinomial classifier.py" contains the multi-class classifier that was implemented during this project.
 A total of 4 classification models were tested in this code: Multinomial Naive Bayes, Stochastic Gradient Descent, Random Forest and k-Nearest-Neighbors.
