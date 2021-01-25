@@ -36,11 +36,12 @@ source of the code: https://github.com/kapadias/mediumposts/blob/master/natural_
 The file "topic modeling using hLDA.py" contains a code from Joe Wandy which permitted us to extract 46 topics from the 3D-printing literature (from Pubmed) using the hierarchical Latent Dirichlet Allocation.
 source of the code: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
 
-The 3d printing testing set were created manually by looking at the 3d printing literature from Pubmed and contains a list 477 PMIDs of articles about 3d printing.
+The "3d printing testing set" was created manually by looking at the 3d printing literature from Pubmed and contains a list 477 PMIDs of articles about 3d printing.
 In this set, we will find clinical studies, in vivo studies, in vitro studies, non biomaterials studies and studies that contain both in vivo and in vitro experiments.
 NB: for the multinomial classification, we decided to make one class with all of the articles that were either in vivo, in vitro or both at the same time, i.e. gathering all types of pre-clinical studies in one category called in vivo/in vitro.
 
-The 3d printing corpus contains the abstracts of the entire 3d printing literature available from Pubmed up to November 2020 which represents a total of 11,153 articles.
+The file "3d printing corpus.zip" contains the abstracts of the entire 3d printing literature available from Pubmed up to November 2020 which represents a total of 11,942 articles.
 These abstracts were found using the following Pubmed query:(((3d printing) OR (3d-printing) OR (three dimensional printing) OR (bioprinting)) NOT ((review)[Publication Type])) NOT ((systematic review)[Publication Type]).
+NB: After changing the format of the abstracts, we were able to classifier only 11,153 abtracts from the corpus.
 NB: To retrieve the abstracts from the given Pubmed query, you can use the Ebot tool from NCBI (link:https://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi).
 This tool works by taking a list of PMIDs or a Pubmed query to generate a perl code that you can run on your terminal in order to get the abstracts in MEDLINE format.
