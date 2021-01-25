@@ -1,7 +1,7 @@
 # Multinomial_classifier
 
 This repository was created by Clarence Lépine, a Master student from the UPC Barcelona, and contains the work that was done during her Master Thesis Project.
-The project was entitled "AUTOMATED TEXT CLASSIFICATION USING MACHINE LEARNING – APPLIED TO AN ABSTRACTS CORPUS OF 3D PRINTING FOR BIOMEDICAL APPLICATIONS".
+The project was entitled "TEXT CLASSIFICATION OF BIOMATERIALS ABSTRACTS AND INFORMATION EXTRACTION FROM THE 3D PRINTING LITERATURE FOR BIOMEDICAL APPLICATIONS USING MACHINE LEARNING ALGORITHMS".
 
 The objectives of the project are the following:
 - Create a new 3D printing testing set using manual curation from Pubmed
@@ -18,23 +18,29 @@ In this repository, we will find all the ressources to reproduce the project suc
 This project is licensed under the GNU GENERAL PUBLIC LICENSE Version 3 - see the LICENSE file for details.
 So the repository is completely open source, anyone can download the files and add some modifications to it.
 
-The text classification folder contains the code to retrieve the Pubmed abtracts from the MEDLINE format. 
+The "text classification" folder contains the code to retrieve the Pubmed abtracts from the MEDLINE format. This code was implemented by Osnat Hakimi.
 This code needs to be used before using the binary classifer from DEBBIE.
 The file "binary classifier from DEBBIE.py" is an adaptation of the SVM classifer from DEBBIE project where 2 classification models were compared (SGD and Random Forest) and where the performances of the models are evaluated.
-The file "multinomial classifier.py" contains the multi-class classifier that was implemented during this project. 
-A file is also included in this folder to change the format of the data before the multinomial classification.
+The file "multinomial classifier.py" contains the multi-class classifier that was implemented during this project.
+It classifies articles into one of three following categories: clinical studies, in vivo/in vitro studies and non biomaterials studies.
 In total 4 classification models were tested for the multinomial classification: Multinomial Naive Bayes, Stochastic Gradient Descent, Random Forest and k-Nearest-Neighbors.
 The best results were obtained with the SGD classification model. We managed to get 0.92 of accuracy and 0.89 of f1-score.
+A file is also included in the "multinomial classifier" folder to change the format of the data before the multinomial classification.
 
-The data extraction folder contains the codes to do text analysis.
+The "data extraction folder" contains the codes to do text analysis.
+The file "data_extraction_from_multinomial_classifier_results.py"contains the code to extract the most frequent terms from the multinomial classification results using term frequency.
+The file "data_extraction_from_pubtator.py" contains the code to extract the most frequent terms from each bioconcept results using term frequency.
+NB: Before using this code, you must download the PubTator annotations of your corpus and remove the titles, the abstacts and the MeSH terms from it. You can easily do that by taking your pubtator file, converting it to txt file and open it into Excel to remove the columns and the lines without importance. To perform the text analysis, we only need three columns: the PMID, the annotation, and the bioconcept.
+The file topic modeling using LDA.py contains a code from Shashank Kapadia which permitted us to extract 5 topics from the 3D-printing literature (from Pubmed) using the Latent Dirichlet Allocation.
+source of the code: https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb
+The file "topic modeling using hLDA.py" contains a code from Joe Wandy which permitted us to extract 46 topics from the 3D-printing literature (from Pubmed) using the hierarchical Latent Dirichlet Allocation.
+source of the code: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
 
 The 3d printing testing set were created manually by looking at the 3d printing literature from Pubmed and contains a list 477 PMIDs of articles about 3d printing.
 In this set, we will find clinical studies, in vivo studies, in vitro studies, non biomaterials studies and studies that contain both in vivo and in vitro experiments.
+NB: for the multinomial classification, we decided to make one class with all of the articles that were either in vivo, in vitro or both at the same time, i.e. gathering all types of pre-clinical studies in one category called in vivo/in vitro.
 
-The 3d printing corpus contains the PMIDs of the entire 3d printing literature available up to November 2020 which represents 11,153 articles.
-These articles were found using the following Pubmed query:(((3d printing) OR (3d-printing) OR (three dimensional printing) OR (bioprinting)) NOT ((review)[Publication Type])) NOT ((systematic review)[Publication Type])
-NB: To retrieve the abstracts from the given PMIDs, you can use the Ebot tool from NCBI (link:https://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi).
+The 3d printing corpus contains the abstracts of the entire 3d printing literature available from Pubmed up to November 2020 which represents a total of 11,153 articles.
+These abstracts were found using the following Pubmed query:(((3d printing) OR (3d-printing) OR (three dimensional printing) OR (bioprinting)) NOT ((review)[Publication Type])) NOT ((systematic review)[Publication Type]).
+NB: To retrieve the abstracts from the given Pubmed query, you can use the Ebot tool from NCBI (link:https://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi).
 This tool works by taking a list of PMIDs or a Pubmed query to generate a perl code that you can run on your terminal in order to get the abstracts in MEDLINE format.
-
-
-
