@@ -75,7 +75,7 @@ convert_medline(refs)
 clean_to_title_abstract(folder)
 
 
-# clean spaces, remove punctatuation signs
+# clean spaces, remove some punctatuation signs
 
 def simplify_text_abstracts(input):
     abstracts = [os.path.join(input, f) for f in os.listdir(input)]
@@ -87,8 +87,6 @@ def simplify_text_abstracts(input):
                 line= line.replace("-", " ")
                 line= line.replace("(", " ")
                 line= line.replace(")", " ")
-                line= line.replace(":", " ")
-                line= line.replace(".", " ")
                 line = line.strip()
                 L.append(line)
                 with open(abstract, 'w') as f:
