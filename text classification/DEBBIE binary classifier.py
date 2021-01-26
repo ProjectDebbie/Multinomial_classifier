@@ -2,10 +2,8 @@
 import numpy as np
 import os
 
-# training = r"E:/multinomial_classifier/train"
-training = r"E:/multinomial_classifier/train+test" # original data from DEBBIE project
-#test = r"E:/multinomial_classifier/test"
-test = r"E:/multinomial_classifier/new_test" # my new dataset
+training = r"..." # put your training set here
+test = r"..." # put your testing set here
 training_set = [os.path.join(training, f) for f in os.listdir(training)]
 test_set = [os.path.join(test, f) for f in os.listdir(test)]
 
@@ -25,7 +23,7 @@ def make_labels(data):
         filepathTokens = fil.split('/')
         lastToken = filepathTokens[len(filepathTokens) - 1]
         print(lastToken)
-        if lastToken.startswith(("train+test\\abstracts_final", "new_test\\abstracts_final"), ):
+        if lastToken.startswith(("train+test\\abstracts_final", "new_test\\abstracts_final"), ): # change according to your problem
             train_labels[docID] = 1
             count = count + 1
         docID = docID + 1
@@ -82,8 +80,8 @@ df_results = pd.DataFrame.from_dict(results, orient='index')
 df_results_2 = pd.DataFrame.from_dict(results_2, orient='index')
 print("df_results(SGD):", df_results)
 print("df_results(RandomForest):", df_results_2)
-df_results.to_csv(r"E:\multinomial_classifier\SGD\classification_results_SGD7.csv", sep='\t')
-df_results.to_csv(r"E:\multinomial_classifier\RandomForest\classification_results_RDF7.csv", sep='\t')
+df_results.to_csv(r"... .csv", sep='\t')
+df_results.to_csv(r"... .csv", sep='\t')
 
 # to count the number of abstracts in each class/category
 relevant_abstracts_SGD = []
@@ -116,12 +114,12 @@ print('number of non-relevant abstracts (RDF):', len(not_relevant_abstracts_RDF)
 
 # working (warning if we run this several times the results are added each time to the folder)
 from shutil import copy2
-for filename in os.listdir(r"E:/multinomial_classifier/new_test"):
-    file_to_copy = os.path.join(r"E:/multinomial_classifier/new_test", filename)
+for filename in os.listdir(r"..."): # put your testing set here
+    file_to_copy = os.path.join(r"...", filename) # same
     if str(file_to_copy) in relevant_abstracts_SGD:
-        copy2(file_to_copy, r"E:\multinomial_classifier\silk\biomaterials")
+        copy2(file_to_copy, r"...") # put the direction where you want to store the biomaterials abstracts
     else:
-        copy2(file_to_copy, r"E:\multinomial_classifier\silk\non_biomaterials")
+        copy2(file_to_copy, r"...") # put the direction where you want to store the non biomaterials abstracts
 
 
 # check performance
