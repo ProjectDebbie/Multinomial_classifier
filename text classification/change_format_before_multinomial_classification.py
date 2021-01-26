@@ -7,8 +7,8 @@ import pandas as pd
 import glob
 
 
-data = r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_vitro_final'
-# put your category (folder with only the abstracts from one class)
+data = r'...'
+# put the directory of your folder that contains abstracs from one category 
 
 # to replace the date of the article by a label at the beginning of each text file
 def add_label(data):
@@ -23,7 +23,7 @@ def add_label(data):
 
 # add_label(data)
 
-input = r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_vitro_final'
+input = r'...' # put your directory here
 
 # text preprocessing
 def preprocess(input):
@@ -47,7 +47,8 @@ def preprocess(input):
 # preprocess(input)
 
 
-input = r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_vitro_final'
+input = r'...' # put your directory here
+
 
 # text preprocessing (put the text in one line after the label;)
 def make_it_into_one_line(input):
@@ -70,7 +71,7 @@ def make_it_into_one_line(input):
 # make_it_into_one_line(input)
 
 
-input = r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_vitro_final'
+input = r'...' # put your directory here
 
 # more text preprocessing (to add /n at the end of the file)
 # abstracts = [os.path.join(input, f) for f in os.listdir(input)]
@@ -88,9 +89,9 @@ input = r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_
 # to convert all of the text files from one category into one
 
 def make_one_file():
-    read_files = glob.glob(r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_vitro_final\*.txt')
+    read_files = glob.glob(r'...\*.txt') # put your directory here
 
-    with open(r'C:\Users\archi\Documents\Multinomial_classifier-master\in_vivo_and_in_vitro_final.txt', "wb") as outfile:
+    with open(r'... .txt', "wb") as outfile: # put your directory here
         for f in read_files:
             with open(f, "rb") as infile:
                 outfile.write(infile.read())
@@ -99,8 +100,8 @@ def make_one_file():
 # make_one_file()
 
 
-input = r'E:\multinomial_classifier\pubmed\test.txt'
-output = r'E:\multinomial_classifier\pubmed\test_cor.txt'
+input = r'...' # put your directory here
+output = r'...' # put your final directory here
 
 # to remove blank lines if needed -> lines with only one blank space here
 def remove_blanklines():
@@ -116,7 +117,7 @@ def remove_blanklines():
 
 # # to change the label of the files if needed
 # content = []
-# filename = r'E:\multinomial_classifier\pubmed\new_test.txt'
+# filename = r'...' # put your directory here
 # with open(filename, 'r') as read_file:
 #     content = read_file.readlines()
 #
@@ -127,7 +128,7 @@ def remove_blanklines():
 
 # to create a dataframe for the multinomial text classification
 def make_dataframe():
-    with open(r'E:\multinomial_classifier\pubmed\new_test.txt') as f:
+    with open(r'... .txt') as f: # put your directory here
         content = f.readlines()
         labels, texts = ([], [])
         for line in content:
@@ -139,14 +140,8 @@ def make_dataframe():
         df['label'] = labels
         df['text'] = texts
         print(df)
-        df.to_csv(r'E:\multinomial_classifier\pubmed\new_test.csv', index=False, header=True, encoding='utf-8')
+        df.to_csv(r'... .csv', index=False, header=True, encoding='utf-8') # put your final directory here
 
 
 # make_dataframe()
-
-
-
-
-
-
 
