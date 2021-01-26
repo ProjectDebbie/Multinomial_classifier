@@ -19,8 +19,8 @@ from sklearn.metrics import classification_report
 # load the data (training set and testing set -> csv files with one abstract in each line)
 # new_train = extension of the DEBBIE gold standard and background datasets with ~1000 clinical abstracts
 # new_test = 3d printing testing set
-data_train = pd.read_csv(r'E:\multinomial_classifier\pubmed\new_train.csv')
-data_test = pd.read_csv(r'E:\multinomial_classifier\pubmed\new_test.csv')
+data_train = pd.read_csv(r'...\new_train.csv')
+data_test = pd.read_csv(r'...\new_test.csv')
 
 # to visualize the training set
 print("Training data shape = {}".format(data_train.shape))
@@ -95,7 +95,7 @@ results = dict(zip(data_test['text'], y_pred))
 df_results = pd.DataFrame.from_dict(results, orient='index', columns=['label'])
 print('NB results:\nnumber of articles in each class\n', df_results['label'].value_counts()) # also done later maybe needs to be deleted
 print("df_results(NB):", df_results)
-df_results.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_NB.csv", sep='\t')
+df_results.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the NB results
 
 # print the number of abstracts in each class for NB
 clinical_abstracts_NB = []
@@ -127,7 +127,7 @@ results = dict(zip(data_test['text'], y_pred))
 df_results = pd.DataFrame.from_dict(results, orient='index', columns=['label'])
 print('SGD results:\nnumber of articles in each class\n', df_results['label'].value_counts())
 print("df_results(SGD):", df_results)
-df_results.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_SGD.csv", sep='\t')
+df_results.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the SGD results
 
 #  to print the number of abstracts in each class for SGD
 clinical_abstracts_SGD = []
@@ -149,11 +149,11 @@ print('number of non biomaterials abstracts (SGD):', len(non_biomaterials_abstra
 # put the results for each category in a dedicate file (these files will be used for data extraction later)
 # only done for SGD because it is the best classification model, so we will only extract information from its results
 clinical = df_results[df_results['label'] == 0]
-clinical.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_SGD_clinical.csv", sep='\t')
+clinical.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the clinical results from SGD
 in_vivo_in_vitro = df_results[df_results['label'] == 1]
-in_vivo_in_vitro.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_SGD_in_vivo_in_vitro.csv", sep='\t')
+in_vivo_in_vitro.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the in vivo/in vitro results from SGD
 non_biomaterials = df_results[df_results['label'] == 2]
-non_biomaterials.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_SGD_non_biomaterials.csv", sep='\t')
+non_biomaterials.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the non biomaterials results results from SGD
 
 # to get the classification results for Random Forest (confusion matrix, accuracy)
 x = vectorizer.transform(data_test['text'])
@@ -168,7 +168,7 @@ results = dict(zip(data_test['text'], y_pred))
 df_results = pd.DataFrame.from_dict(results, orient='index', columns=['label'])
 print('RF results:\nnumber of articles in each class\n', df_results['label'].value_counts())
 print("df_results(RF):", df_results)
-df_results.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_RF.csv", sep='\t')
+df_results.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the RF results
 
 #  to print the number of abstracts in each class for Random Forest
 clinical_abstracts_RF = []
@@ -216,7 +216,7 @@ results = dict(zip(data_test['text'], y_pred))
 df_results = pd.DataFrame.from_dict(results, orient='index', columns=['label'])
 print('kNN results:\nnumber of articles in each class\n', df_results['label'].value_counts())
 print("df_results(kNN):", df_results)
-df_results.to_csv(r"E:\multinomial_classifier\Pubmed\classification_results_kNN.csv", sep='\t')
+df_results.to_csv(r"... .csv", sep='\t') # put the directory where you want to store the kNN results
 
 #  to print the number of abstracts in each class for kNN
 clinical_abstracts_kNN = []
