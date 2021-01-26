@@ -33,9 +33,9 @@ The file "data_extraction_from_pubtator.py" contains the code to extract the mos
 NB: Before using this code, you must download the PubTator annotations of your corpus and remove the titles, the abstacts and the MeSH terms from it. You can easily do that by taking your pubtator file, converting it to txt file and open it into Excel to remove the columns and the lines without importance. To perform the text analysis, we only need three columns: the PMID, the annotation, and the bioconcept.
 
 If you want to do topic mining on your corpus, here are some useful links:
-code from Shashank Kapadia: https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb
+- code from Shashank Kapadia: https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb
 This link contains a code to do topic mining using Latent Dirichlet Allocation.
-code from Joe Wandy: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
+- code from Joe Wandy: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
 This link contains a code to do topic mining using hierarchical Latent Dirichlet Allocation.
 
 The "3d printing testing set" was created manually by looking at the 3d printing literature from Pubmed and contains a list 477 PMIDs of articles about 3d printing.
