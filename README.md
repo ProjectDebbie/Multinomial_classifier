@@ -31,10 +31,12 @@ The "data extraction folder" contains the codes to do text analysis.
 The file "data_extraction_from_multinomial_classifier_results.py"contains the code to extract the most frequent terms from the multinomial classification results using term frequency.
 The file "data_extraction_from_pubtator.py" contains the code to extract the most frequent terms from each bioconcept results using term frequency.
 NB: Before using this code, you must download the PubTator annotations of your corpus and remove the titles, the abstacts and the MeSH terms from it. You can easily do that by taking your pubtator file, converting it to txt file and open it into Excel to remove the columns and the lines without importance. To perform the text analysis, we only need three columns: the PMID, the annotation, and the bioconcept.
-The file topic modeling using LDA.py contains a code from Shashank Kapadia which permitted us to extract 5 topics from the 3D-printing literature (from Pubmed) using the Latent Dirichlet Allocation.
-source of the code: https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb
-The file "topic modeling using hLDA.py" contains a code from Joe Wandy which permitted us to extract 46 topics from the 3D-printing literature (from Pubmed) using the hierarchical Latent Dirichlet Allocation.
-source of the code: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
+
+If you want to do topic mining on your corpus, here are some useful links: 
+code from Shashank Kapadia: https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb
+This link contains a code to do topic mining using Latent Dirichlet Allocation.
+code from Joe Wandy: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
+This link contains a code to do topic mining using hierarchical Latent Dirichlet Allocation.
 
 The "3d printing testing set" was created manually by looking at the 3d printing literature from Pubmed and contains a list 477 PMIDs of articles about 3d printing.
 In this set, we will find clinical studies, in vivo studies, in vitro studies, non biomaterials studies and studies that contain both in vivo and in vitro experiments.
