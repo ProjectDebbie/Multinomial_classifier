@@ -1,21 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[27]:
-
 
 import re
 import os
 
 
 #define folders and prefix
-refs = '/home/osnat/Documents/DEBBIE/polydioxanone/final_corpus_20200518/final_corpus_medline'
-folder = '/home/osnat/Documents/DEBBIE/polydioxanone/final_corpus_20200518/abstracts_text/'
-folder_2 = '/home/osnat/Documents/DEBBIE/polydioxanone/final_corpus_20200518/abstracts_final/'
-prefix = 'random_testset'
-
-
-# In[28]:
+refs = '...' # put the directory with the abtracts in MEDLINE format
+folder = '...' # put the directory of the folder where you want to store the abstracts
+folder_2 = '...' # put the directory of the folder where you want to store the final abstracts
+prefix = '...' # choose your prefix here
 
 
 # break medline file into segments
@@ -38,10 +33,6 @@ def convert_medline(refs):
                 if line.startswith("PMID"):
                     found = True
                     block += line
-       
-
-
-# In[29]:
 
 
 # extract PMID, title and abstract
@@ -80,18 +71,11 @@ def clean_to_title_abstract(folder):
             continue
 
 
-
-# In[30]:
-
-
 convert_medline(refs)
 clean_to_title_abstract(folder)
 
 
-# In[31]:
-
-
-#clean spaces
+# clean spaces, remove punctatuation signs
 
 def simplify_text_abstracts(input):
     abstracts = [os.path.join(input, f) for f in os.listdir(input)]
@@ -103,6 +87,8 @@ def simplify_text_abstracts(input):
                 line= line.replace("-", " ")
                 line= line.replace("(", " ")
                 line= line.replace(")", " ")
+                line= line.replace(":", " ")
+                line= line.replace(".", " ")
                 line = line.strip()
                 L.append(line)
                 with open(abstract, 'w') as f:
@@ -110,16 +96,4 @@ def simplify_text_abstracts(input):
                         f.write("%s\n" % item)
 
 simplify_text_abstracts(folder_2)                       
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
 
