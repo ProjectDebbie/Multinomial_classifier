@@ -32,7 +32,7 @@ The file "data_extraction_from_multinomial_classifier_results.py"contains the co
 The file "data_extraction_from_pubtator.py" contains the code to extract the most frequent terms from each bioconcept results using term frequency.
 NB: Before using this code, you must download the PubTator annotations of your corpus and remove the titles, the abstacts and the MeSH terms from it. You can easily do that by taking your pubtator file, converting it to txt file and open it into Excel to remove the columns and the lines without importance. To perform the text analysis, we only need three columns: the PMID, the annotation, and the bioconcept.
 
-If you want to do topic mining on your corpus, here are some useful links: \n
+If you want to do topic mining on your corpus, here are some useful links:
 code from Shashank Kapadia: https://github.com/kapadias/mediumposts/blob/master/natural_language_processing/topic_modeling/notebooks/Introduction%20to%20Topic%20Modeling.ipynb
 This link contains a code to do topic mining using Latent Dirichlet Allocation.
 code from Joe Wandy: https://github.com/joewandy/hlda/blob/master/notebooks/bbc_test.ipynb
@@ -45,5 +45,5 @@ NB: for the multinomial classification, we decided to make one class with all of
 The file "3d printing corpus.zip" contains the abstracts of the entire 3d printing literature available from Pubmed up to November 2020 which represents a total of 11,942 articles.
 These abstracts were found using the following Pubmed query:(((3d printing) OR (3d-printing) OR (three dimensional printing) OR (bioprinting)) NOT ((review)[Publication Type])) NOT ((systematic review)[Publication Type]).
 NB: After changing the format of the abstracts, we were able to classifier only 11,153 abtracts from the corpus.
-NB: To retrieve the abstracts from the given Pubmed query, you can use the Ebot tool from NCBI (link:https://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi).
+NB: If you want retrieve the abstracts from a given Pubmed query, you can use the Ebot tool from NCBI (link:https://www.ncbi.nlm.nih.gov/Class/PowerTools/eutils/ebot/ebot.cgi).
 This tool works by taking a list of PMIDs or a Pubmed query to generate a perl code that you can run on your terminal in order to get the abstracts in MEDLINE format.
