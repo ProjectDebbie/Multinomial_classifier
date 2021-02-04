@@ -1,7 +1,7 @@
 # Multinomial_classifier
 
 This repository was created by Clarence Lépine, a Master student from the UPC Barcelona, and contains the work that was done during her Master Thesis Project.
-The project was entitled "TEXT CLASSIFICATION OF BIOMATERIALS ABSTRACTS AND INFORMATION EXTRACTION FROM THE 3D PRINTING LITERATURE FOR BIOMEDICAL APPLICATIONS USING MACHINE LEARNING ALGORITHMS".
+The project was entitled "TEXT CLASSIFICATION OF BIOMATERIALS ABSTRACTS AND INFORMATION EXTRACTION FROM THE 3D PRINTING LITERATURE FOR BIOMEDICAL APPLICATIONS USING MACHINE LEARNING ALGORITHMS", supervised by Osnat Hakimi and Maria-Pau Ginebra.
 
 The objectives of the project are the following:
 - Create a new 3D printing testing set using manual curation from Pubmed
